@@ -9,6 +9,7 @@ import { NbCardModule, NbButtonModule, NbInputModule, NbActionsModule, NbTooltip
 import { zhTW } from 'date-fns/locale';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
 import { RequiredFormDirective } from './directives/required-form.directive';
+import { ChartsModule } from 'ng2-charts';
 
 const NB_MODEL = [
   NbCardModule,
@@ -53,11 +54,13 @@ const DIRECTIVES = [
     CommonModule,
     NebularModule,
     FlexLayoutModule,
+    ChartsModule,
     ...NB_MODEL
   ],
   exports: [
     NebularModule,
     FlexLayoutModule,
+    ChartsModule,
     ...NB_MODEL,
     ...DIRECTIVES
   ]

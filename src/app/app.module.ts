@@ -8,6 +8,7 @@ import { LayoutModule } from './@feature/@Layout/layout.module';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
 import { zhTW } from 'date-fns/locale';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       format: 'yyyy/MM/dd',
     }),
     NbDatepickerModule.forRoot(),
+    ChartsModule
   ],
   bootstrap: [AppComponent]
 })
