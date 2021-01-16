@@ -1,13 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'chart.js';
 
 @Component({
-  selector: 'first-chart',
-  templateUrl: './first-chart.component.html',
-  styleUrls: ['./first-chart.component.scss']
+  selector: 'chart-temperature-and-humidity',
+  templateUrl: './chart-temperature-and-humidity.component.html',
+  styleUrls: ['./chart-temperature-and-humidity.component.scss']
 })
-export class FirstChartComponent implements OnInit {
-  @Input()
+export class ChartTemperatureAndHumidityComponent implements OnInit {
   barChartType: ChartType = 'line';
 
   // charts.component.ts

@@ -1,112 +1,15 @@
-<first-chart></first-chart>
-<div fxLayoutAlign="center">
-  <nb-card accent="primary" fxFlex="60" fxFlex.sm="80" fxFlex.lg="80" fxFlex.md="80" fxFlex.xs="80" >
-    <nb-card-header>
-      <div fxLayoutAlign="space-between">
-        <div fxLayoutAlign="start center">
-          <span class="card-header">新增項目 - 短票、定存(台幣)、定存(外幣)、金融債</span>
-        </div>
-        <div fxLayoutGap="5px">
-          <button size="small" nbButton status="danger"><nb-icon icon="corner-up-left"></nb-icon>離開</button>
-          <button size="small" nbButton status="primary"><nb-icon icon="save-outline"></nb-icon>存檔</button>
-          <button size="small" nbButton status="info"><nb-icon icon="save-outline"></nb-icon>存檔並新增下一筆</button>
-        </div>
-      </div>
-    </nb-card-header>
-    <nb-card-body>
-      <div [formGroup]="form" class="form-body" fxLayout="column" fxLayoutGap="25px">
-        <div class="form-control">
-          <label class="label" requiredForm>院別:</label>
-          <nb-select formControlName="hospital" fullWidth placeholder="請選擇院區">
-            <nb-option value="">請選擇院區</nb-option>
-            <nb-option *ngFor="let item of allHospital" [value]="item">{{ item }}</nb-option>
-          </nb-select>
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>項目別:</label>
-          <nb-select formControlName="mainType" fullWidth placeholder="請選擇項目">
-            <nb-option value="">請選擇項目</nb-option>
-            <nb-option *ngFor="let item of mainType" [value]="item">{{ item }}</nb-option>
-          </nb-select>
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>銀行別:</label>
-          <nb-select formControlName="bank" fullWidth placeholder="請選擇銀行">
-            <nb-option value="">請選擇銀行</nb-option>
-            <nb-option *ngFor="let item of allBank" [value]="item">{{ item }}</nb-option>
-          </nb-select>
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>帳戶號碼:</label>
-          <input formControlName="accountNumber" type="text" nbInput fullWidth placeholder="請輸入帳戶號碼">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>存入金額（台幣）:</label>
-          <input formControlName="depositsTw" type="text" nbInput fullWidth placeholder="請輸入金額">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>存入幣別:</label>
-          <nb-select formControlName="currency" fullWidth placeholder="請選擇幣別">
-            <nb-option value="">請選擇幣別</nb-option>
-            <nb-option *ngFor="let item of allCurrency" [value]="item">{{ item }}</nb-option>
-          </nb-select>
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>存入金額（外幣）:</label>
-          <input formControlName="depositsUs" type="text" nbInput fullWidth placeholder="請輸入金額">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>期別:</label>
-          <nb-select formControlName="dateType" fullWidth placeholder="請選擇期別">
-            <nb-option value="">請選擇期別</nb-option>
-            <nb-option *ngFor="let item of allDateType" [value]="item">{{ item }}</nb-option>
-          </nb-select>
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>日期區間:</label>
-          <nb-form-field>
-            <input formControlName="dateRange" fullWidth nbInput placeholder="請選擇日期區間" [nbDatepicker]="formpicker">
-            <nb-rangepicker #formpicker></nb-rangepicker>
-          </nb-form-field>
-        </div>
-        <!-- <div class="form-control">
-          <label class="label" requiredForm>到期日期:</label>
-          <input nbInput fullWidth placeholder="請選擇到期日期" [nbDatepicker]="startDate">
-          <nb-datepicker #startDate></nb-datepicker>
-        </div> -->
-        <div class="form-control">
-          <label class="label" requiredForm>天數:</label>
-          <input formControlName="dayCount" type="text" nbInput fullWidth placeholder="(選擇日期區間會自動計算)">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>利率（%）:</label>
-          <input formControlName="percent" type="text" nbInput fullWidth placeholder="請輸入利率">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>計息方式:</label>
-          <input formControlName="calculateMethod" type="text" nbInput fullWidth placeholder="請輸入計息方式">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>付息方式:</label>
-          <input formControlName="paymentMethod" type="text" nbInput fullWidth placeholder="請輸入付息方式">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>利息轉存帳戶:</label>
-          <input formControlName="transferAccount" type="text" nbInput fullWidth placeholder="請輸入利息轉存帳戶">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>自動轉期記號:</label>
-          <input formControlName="automaticTransferMark" type="text" nbInput fullWidth placeholder="請輸入自動轉期記號">
-        </div>
-        <div class="form-control">
-          <label class="label" requiredForm>到期自動入戶記號:</label>
-          <input formControlName="automaticAccountEntryMark" type="text" nbInput fullWidth placeholder="請輸入到期自動入戶記號">
-        </div>
-        <div class="form-control">
-          <label class="label">備註:</label>
-          <textarea formControlName="remarks" nbInput fullWidth placeholder="請輸入備註"></textarea>
-        </div>
-      </div>
-    </nb-card-body>
-  </nb-card>
+
+<div fxLayout="row wrap">
+  <div class="chart-card" fxFlex="50" fxFlex.sm="100"  fxFlex.xs="100">
+    <chart-temperature></chart-temperature>
+  </div>
+  <div class="chart-card" fxFlex="50" fxFlex.sm="100" fxFlex.xs="100">
+    <chart-temperature-and-humidity></chart-temperature-and-humidity>
+  </div>
+  <div class="chart-card" fxFlex="50" fxFlex.sm="100" fxFlex.xs="100">
+    <chart-water-count></chart-water-count>
+  </div>
+  <div class="chart-card" fxFlex="50" fxFlex.sm="100" fxFlex.xs="100">
+    <chart-humidity></chart-humidity>
+  </div>
 </div>
