@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NbSidebarService } from '@nebular/theme';
 
 @Component({
@@ -8,7 +9,8 @@ import { NbSidebarService } from '@nebular/theme';
 })
 export class FrontHeaderComponent implements OnInit {
   constructor(
-    private sidebarService: NbSidebarService
+    private sidebarService: NbSidebarService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -16,5 +18,9 @@ export class FrontHeaderComponent implements OnInit {
 
   toggle() {
     this.sidebarService.toggle(true, 'menu');
+  }
+
+  logout() {
+    this.router.navigate(['login']);
   }
 }

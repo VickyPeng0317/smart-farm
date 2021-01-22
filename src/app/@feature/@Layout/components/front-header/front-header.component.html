@@ -8,7 +8,7 @@
       </div>
       <!-- Action -->
       <nb-actions size="small">
-        <nb-action class="pointer">
+        <nb-action class="pointer" [nbPopover]="userActions" nbPopoverTrigger="click" nbPopoverPlacement="bottom">
           <div fxLayoutAlign="start center">
             <nb-icon icon="person"></nb-icon>
             <span class="font-17 line-17">管理員</span>
@@ -24,3 +24,11 @@
     <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
+
+<ng-template #userActions>
+  <nb-list>
+    <nb-list-item class="pointer" (click)="logout()">
+      <span>登出系統</span>
+    </nb-list-item>
+  </nb-list>
+</ng-template>

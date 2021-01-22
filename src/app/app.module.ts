@@ -1,3 +1,4 @@
+import { AuthModule } from './@auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +28,8 @@ import { ChartsModule } from 'ng2-charts';
       format: 'yyyy/MM/dd',
     }),
     NbDatepickerModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    AuthModule
   ],
   bootstrap: [AppComponent]
 })
