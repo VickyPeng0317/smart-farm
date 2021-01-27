@@ -10,6 +10,12 @@ import { NbDateFnsDateModule } from '@nebular/date-fns';
 import { zhTW } from 'date-fns/locale';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
+import { IMqttServiceOptions, MqttModule } from 'ngx-mqtt';
+
+const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  connectOnCreate: true,
+  url: 'tcp://163.17.136.70:1883'
+};
 
 @NgModule({
   declarations: [
@@ -21,6 +27,7 @@ import { ChartsModule } from 'ng2-charts';
     AppRoutingModule,
     LayoutModule,
     SharedModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot(),
@@ -29,7 +36,7 @@ import { ChartsModule } from 'ng2-charts';
     }),
     NbDatepickerModule.forRoot(),
     ChartsModule,
-    AuthModule
+    AuthModule,
   ],
   bootstrap: [AppComponent]
 })
