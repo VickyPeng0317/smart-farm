@@ -27,7 +27,6 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     AppRoutingModule,
     LayoutModule,
     SharedModule,
-    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot(),
