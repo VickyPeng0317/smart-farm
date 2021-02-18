@@ -1,0 +1,38 @@
+<nb-card accent="primary">
+  <nb-card-header>
+    <h3>任務管理</h3>
+  </nb-card-header>
+</nb-card>
+
+<nb-card accent="info">
+  <nb-card-header>
+    <h5>查詢條件</h5>
+  </nb-card-header>
+  <nb-card-body fxLayout="row wrap" fxLayoutGap="10px">
+    <div class="form-control" fxFlex="25" fxFlex.sm="100"  fxFlex.xs="100">
+      <label class="label">名稱</label>
+      <input type="text" nbInput fullWidth placeholder="請輸入任務名稱">
+    </div>
+    <div class="form-control" fxFlex="25" fxFlex.sm="100"  fxFlex.xs="100">
+      <label class="label">類型</label>
+      <input type="text" nbInput fullWidth placeholder="請輸入任務類型">
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-flip-card>
+  <nb-card-front>
+    <nb-card accent="success">
+      <nb-card-body>
+        Front
+      </nb-card-body>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card>
+      <nb-card-body>
+        Back
+      </nb-card-body>
+    </nb-card>
+  </nb-card-back>
+</nb-flip-card>

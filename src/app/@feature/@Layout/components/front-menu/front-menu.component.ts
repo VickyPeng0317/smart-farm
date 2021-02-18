@@ -10,7 +10,13 @@ export class FrontMenuComponent implements OnInit {
   items: NbMenuItem[] = [
     {
       title: '首頁',
-      icon: 'home'
+      icon: 'home',
+      link: 'home'
+    },
+    {
+      title: '任務',
+      icon: 'briefcase',
+      link: 'task'
     }
   ];
   constructor() { }
