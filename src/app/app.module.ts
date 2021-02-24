@@ -11,6 +11,7 @@ import { zhTW } from 'date-fns/locale';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule } from 'ng2-charts';
 import { IMqttServiceOptions, MqttModule } from 'ngx-mqtt';
+import {HttpClientModule} from '@angular/common/http';
 
 const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   connectOnCreate: true,
@@ -36,6 +37,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     NbDatepickerModule.forRoot(),
     ChartsModule,
     AuthModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })
