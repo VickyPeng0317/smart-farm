@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  isMock: true,
   production: false,
   apiUrl: 'http://163.17.136.70:8080'
 };

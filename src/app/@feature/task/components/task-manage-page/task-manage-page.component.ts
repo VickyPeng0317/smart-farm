@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ITaskListItem, TaskService} from '@core/services/task.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
   selector: 'task-manage-page',
@@ -34,16 +36,28 @@ export class TaskManagePageComponent implements OnInit {
     }
   ];
   taskList: ITaskListItem[] = [];
+  searchForm = new FormGroup({
+    TaskName: new FormControl(''),
+    TaskType: new FormControl(''),
+  });
   constructor(
     private taskService: TaskService
   ) { }
 
   ngOnInit(): void {
     this.getTaskList();
+    this.onSearch();
+  }
+
+  onSearch() {
+    this.searchForm.valueChanges.pipe(
+     debounceTime(300)
+    ).subscribe(() => this.getTaskList());
   }
 
   getTaskList() {
-    this.taskService.getTaskList().subscribe(res => {
+    const params = this.searchForm.getRawValue();
+    this.taskService.getTaskList(params).subscribe(res => {
       this.taskList = res.data;
     });
   }

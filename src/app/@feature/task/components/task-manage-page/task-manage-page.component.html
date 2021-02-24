@@ -5,14 +5,14 @@
 </nb-card>
 
 <nb-card accent="info">
-  <nb-card-body fxLayout="row wrap" fxLayoutGap="10px">
+  <nb-card-body [formGroup]="searchForm" fxLayout="row wrap" fxLayoutGap="10px">
     <div class="form-control" fxFlex="25" fxFlex.sm="100"  fxFlex.xs="100">
       <label class="label">名稱</label>
-      <input type="text" nbInput fullWidth placeholder="請輸入任務名稱">
+      <input formControlName="TaskName" type="text" nbInput fullWidth placeholder="請輸入任務名稱">
     </div>
     <div class="form-control" fxFlex="25" fxFlex.sm="100"  fxFlex.xs="100">
       <label class="label">類型</label>
-      <input type="text" nbInput fullWidth placeholder="請輸入任務類型">
+      <input formControlName="TaskType" type="text" nbInput fullWidth placeholder="請輸入任務類型">
     </div>
   </nb-card-body>
 </nb-card>
@@ -39,7 +39,6 @@
             </tbody>
           </table>
         </div>
-
       </nb-card-body>
     </nb-card>
   </nb-card-front>

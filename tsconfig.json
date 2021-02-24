@@ -11,7 +11,7 @@
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -26,11 +26,14 @@
       "es2018",
       "dom"
     ],
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false
   }
 }
