@@ -1,27 +1,17 @@
 var mqtt = require('mqtt');
 var opt = {
-  port: 1883,
+  port: 188,
   clientId: 'nodejasdasds'
 };
 
-var client = mqtt.connect('tcp://163.17.136.70', opt);
+var wsClient = mqtt.connect('ws://163.17.136.70:1884');
+wsClient.on('connect', () => console.log('ws connect success'));
 
-client.on('connect', function() {
-  console.log('success');
-  client.subscribe('andy_test/tmp_t', function (err) {
-    if (!err) {
-      client.publish('test/andy', 'andy_test/tmp_t')
-    }
-    console.log(123);
-  });
-  client.subscribe('test/andy', function (err) {
-    if (!err) {
-      client.publish('test/andy', 'test/andy')
-    }
-    console.log(123);
-  });
-});
+var tcpClient = mqtt.connect('tcp://163.17.136.70:1883');
+tcpClient.on('connect', () => console.log('tcp connect success'));
 
-client.on('message', function (topic, msg) {
-  console.log(`topic: ${topic}, msg: ${msg}`);
-});
+
+
+// client.on('message', function (topic, msg) {
+//   console.log(`topic: ${topic}, msg: ${msg}`);
+// });

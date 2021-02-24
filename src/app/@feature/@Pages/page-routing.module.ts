@@ -9,6 +9,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home-page/home-page.module').then(m => m.HomePageModule),
   },
+  // 任務
+  {
+    path: 'task',
+    loadChildren: () =>
+      import('./task-page/task-page.module').then(m => m.TaskPageModule),
+  },
   {
     path: '',
     redirectTo: 'home',
