@@ -1,6 +1,7 @@
 <nb-card accent="primary">
-  <nb-card-header>
+  <nb-card-header fxLayoutAlign="space-between center">
     <h4>任務管理</h4>
+    <button status="success" nbButton><nb-icon icon="plus-outline"></nb-icon>新增任務</button>
   </nb-card-header>
 </nb-card>
 
@@ -17,7 +18,45 @@
   </nb-card-body>
 </nb-card>
 
-<nb-flip-card>
+<nb-card accent="success">
+  <nb-card-body>
+    <div>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th *ngFor="let col of columnList">
+              {{ col.name }}
+            </th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of taskList">
+            <td *ngFor="let col of columnList">
+              <ng-container [ngSwitch]="col.key">
+                <ng-container *ngSwitchCase="'CreateTime'" >
+                  {{ data.CreateTime | date:'yyyy-MM-dd HH:mm:ss' }}
+                </ng-container>
+                <ng-container *ngSwitchCase="'UpdateTime'" >
+                  {{ data.UpdateTime | date:'yyyy-MM-dd HH:mm:ss' }}
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{ data[col.key] || '無' }}
+                </ng-container>
+              </ng-container>
+            </td>
+            <td fxLayoutGap="5px">
+              <button status="primary" nbButton>編輯</button>
+              <button status="danger" nbButton>刪除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<!-- <nb-flip-card>
   <nb-card-front>
     <nb-card accent="success">
       <nb-card-body>
@@ -49,4 +88,4 @@
       </nb-card-body>
     </nb-card>
   </nb-card-back>
-</nb-flip-card>
+</nb-flip-card> -->

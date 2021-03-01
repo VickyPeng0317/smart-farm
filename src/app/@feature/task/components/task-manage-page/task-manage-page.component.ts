@@ -56,8 +56,13 @@ export class TaskManagePageComponent implements OnInit {
   }
 
   getTaskList() {
+    this.taskList = [];
     const params = this.searchForm.getRawValue();
     this.taskService.getTaskList(params).subscribe(res => {
+      const isSuccess = res.msg !== 'fail';
+      if (!isSuccess) {
+        return;
+      }
       this.taskList = res.data;
     });
   }
