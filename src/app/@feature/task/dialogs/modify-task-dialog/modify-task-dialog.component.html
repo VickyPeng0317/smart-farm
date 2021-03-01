@@ -1,0 +1,34 @@
+<nb-card style="width: 400px" [status]="isEdit ? 'primary' : 'success'">
+  <nb-card-header>
+    <h5>{{ isEdit ? '編輯任務' : '新增任務' }}</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <div [formGroup]="form" fxLayout="column" fxLayoutGap="10px">
+      <div class="form-control">
+        <label class="lable">名稱</label>
+        <input formControlName="TaskName" type="text" fullWidth nbInput placeholder="請輸入名稱">
+      </div>
+      <!-- <div class="form-control">
+        <label class="lable">狀態</label>
+        <input type="text" fullWidth nbInput placeholder="請輸入狀態 (1/0)">
+      </div> -->
+      <div class="form-control">
+        <label class="lable">類別</label>
+        <nb-select formControlName="TaskType" fullWidth placeholder="請選擇類別">
+          <nb-option [value]="null">無</nb-option>
+          <nb-option *ngFor="let type of allTaskTypeList" [value]="type">
+            {{ type }}
+          </nb-option>
+        </nb-select>
+      </div>
+      <div class="form-control">
+        <label class="lable">說明</label>
+        <input formControlName="TaskDetail" type="text" fullWidth nbInput placeholder="請輸入說明">
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer fxLayoutAlign="end center" fxLayoutGap="5px">
+    <button [disabled]="form.invalid" (click)="send()" status="primary" nbButton>送出</button>
+    <button (click)="close()" status="basic" nbButton>取消</button>
+  </nb-card-footer>
+</nb-card>

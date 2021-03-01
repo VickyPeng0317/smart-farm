@@ -1,7 +1,7 @@
 <nb-card accent="primary">
   <nb-card-header fxLayoutAlign="space-between center">
     <h4>任務管理</h4>
-    <button status="success" nbButton><nb-icon icon="plus-outline"></nb-icon>新增任務</button>
+    <button (click)="openCreateTaskDialog()" status="success" nbButton><nb-icon icon="plus-outline"></nb-icon>新增任務</button>
   </nb-card-header>
 </nb-card>
 
@@ -46,8 +46,9 @@
               </ng-container>
             </td>
             <td fxLayoutGap="5px">
-              <button status="primary" nbButton>編輯</button>
-              <button status="danger" nbButton>刪除</button>
+              <button status="basic" (click)="openViewTaskInfoDialog(data.TaskId)" nbButton>檢視</button>
+              <button status="primary" (click)="openEditTaskDialog(data.TaskId)" nbButton>編輯</button>
+              <button status="danger" (click)="deleteTask(data.TaskId)" nbButton>刪除</button>
             </td>
           </tr>
         </tbody>

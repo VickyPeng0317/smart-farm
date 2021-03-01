@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbDatepickerModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
+import { NbDatepickerModule, NbDialogModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
 import { SharedModule } from '@shared/shared.module';
 import { LayoutModule } from './@feature/@Layout/layout.module';
 import { NbDateFnsDateModule } from '@nebular/date-fns';
@@ -38,6 +38,7 @@ const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
     ChartsModule,
     AuthModule,
     HttpClientModule,
+    NbDialogModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

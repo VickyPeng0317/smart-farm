@@ -1,0 +1,18 @@
+<nb-card style="width: 400px">
+  <nb-card-header>
+    <h5>任務詳細</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <span>名稱: {{ taskInfo.TaskName }} </span>
+      <span>狀態: {{ taskInfo.TaskStatus }} </span>
+      <span>類別: {{ taskInfo.TaskType }} </span>
+      <span>說明: {{ taskInfo.TaskDetail }} </span>
+      <span>建立時間: {{ taskInfo.CreateTime | date:'yyyy-MM-dd HH:mm:ss' }} </span>
+      <span>更新時間: {{ taskInfo.UpdateTime | date:'yyyy-MM-dd HH:mm:ss' }} </span>
+    </div>
+  </nb-card-body>
+  <nb-card-footer fxLayoutAlign="end center" fxLayoutGap="5px">
+    <button (click)="close()" status="basic" nbButton>關閉</button>
+  </nb-card-footer>
+</nb-card>
