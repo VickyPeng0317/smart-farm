@@ -15,6 +15,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./task-page/task-page.module').then(m => m.TaskPageModule),
   },
+  // 任務
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./user-page/user-page.module').then(m => m.UserPageModule),
+  },
   {
     path: '',
     redirectTo: 'home',
