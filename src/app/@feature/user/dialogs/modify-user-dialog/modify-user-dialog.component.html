@@ -14,15 +14,11 @@
       </div>
       <div class="form-control">
         <label class="lable">身分</label>
-        <nb-select formControlName="TaskType" fullWidth placeholder="請選擇身分">
-          <nb-option *ngFor="let type of allTaskTypeList" [value]="type">
-            {{ type }}
+        <nb-select formControlName="IsDispatched" fullWidth placeholder="請選擇身分">
+          <nb-option *ngFor="let item of allIdentity" [value]="item.value">
+            {{ item.name }}
           </nb-option>
         </nb-select>
-      </div>
-      <div class="form-control">
-        <label class="lable">說明</label>
-        <input formControlName="TaskDetail" type="text" fullWidth nbInput placeholder="請輸入說明">
       </div>
     </div>
   </nb-card-body>
