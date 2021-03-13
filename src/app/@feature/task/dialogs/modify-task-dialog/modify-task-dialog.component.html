@@ -1,20 +1,21 @@
 <nb-card style="width: 400px" [status]="isEdit ? 'primary' : 'success'">
   <nb-card-header>
-    <h5>{{ isEdit ? '編輯使用者' : '新增使用者' }}</h5>
+    <h5>{{ isEdit ? '編輯任務' : '新增任務' }}</h5>
   </nb-card-header>
   <nb-card-body>
     <div [formGroup]="form" fxLayout="column" fxLayoutGap="10px">
       <div class="form-control">
-        <label class="lable">帳號</label>
-        <input formControlName="Account" type="text" fullWidth nbInput placeholder="請輸入帳號">
+        <label class="lable">名稱</label>
+        <input formControlName="TaskName" type="text" fullWidth nbInput placeholder="請輸入名稱">
       </div>
+      <!-- <div class="form-control">
+        <label class="lable">狀態</label>
+        <input type="text" fullWidth nbInput placeholder="請輸入狀態 (1/0)">
+      </div> -->
       <div class="form-control">
-        <label class="lable">密碼</label>
-        <input formControlName="Password" type="password" fullWidth nbInput placeholder="請輸入密碼">
-      </div>
-      <div class="form-control">
-        <label class="lable">身分</label>
-        <nb-select formControlName="TaskType" fullWidth placeholder="請選擇身分">
+        <label class="lable">類別</label>
+        <nb-select formControlName="TaskType" fullWidth placeholder="請選擇類別">
+          <nb-option [value]="null">無</nb-option>
           <nb-option *ngFor="let type of allTaskTypeList" [value]="type">
             {{ type }}
           </nb-option>

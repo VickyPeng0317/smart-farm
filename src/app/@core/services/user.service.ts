@@ -29,7 +29,7 @@ export class UserService extends BaseService{
           UserId: 2,
           Account: 'test02',
           Password: 'test',
-          IsDispatched: 1,
+          IsDispatched: 0,
           CreateTime: '2021-02-17',
           UpdateTime: '2021-02-22'
         },
@@ -45,7 +45,7 @@ export class UserService extends BaseService{
           UserId: 5,
           Account: 'test04',
           Password: 'test',
-          IsDispatched: 1,
+          IsDispatched: 0,
           CreateTime: '2021-03-02',
           UpdateTime: '2021-03-02'
         }
